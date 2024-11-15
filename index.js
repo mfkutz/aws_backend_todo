@@ -17,11 +17,12 @@ app.use(cors());
 app.use("/healthcheck", (req, res) => {
   res.status(200).send("ok");
 });
+
+app.use("/api/todo", todoRoutes);
+
 app.use((req, res) => {
   res.status(200).send("URL no encontrada");
 });
-app.use(`/api/todo`, todoRoutes);
-
 //APP initialization
 connectDB();
 mongoose.connection.once("open", () => {
