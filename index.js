@@ -20,7 +20,7 @@ app.use("/healthcheck", (req, res) => {
 app.use((req, res) => {
   res.status(200).send("URL no encontrada");
 });
-app.use(`/api/${process.env.API_V1}/todo`, todoRoutes);
+app.use(`/api/todo`, todoRoutes);
 
 //APP initialization
 connectDB();
